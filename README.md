@@ -47,7 +47,3 @@ Now it contains all the screen, thanks for your love and support 🙏
 ![Preview](5.png)
 ![Preview](6.png)
 ![Preview](7.png)
-# bezel_flutter_prototype
-# bezel_flutter_prototype
-# bezel_flutter_proto
-# bezel_flutter_proto
