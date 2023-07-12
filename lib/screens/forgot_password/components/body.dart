@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/components/custom_surfix_icon.dart';
-import 'package:shop_app/components/default_button.dart';
-import 'package:shop_app/components/form_error.dart';
-import 'package:shop_app/components/no_account_text.dart';
-import 'package:shop_app/size_config.dart';
+import 'package:Bezel/components/custom_surfix_icon.dart';
+import 'package:Bezel/components/default_button.dart';
+import 'package:Bezel/components/form_error.dart';
+import 'package:Bezel/components/no_account_text.dart';
+import 'package:Bezel/size_config.dart';
 
 import '../../../constants.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/routes.dart';
-import 'package:shop_app/screens/navigator/navigator_screen.dart';
-import 'package:shop_app/screens/splash/splash_screen.dart';
-import 'package:shop_app/theme.dart';
+import 'package:Bezel/routes.dart';
+import 'package:Bezel/screens/navigator/navigator_screen.dart';
+import 'package:Bezel/screens/splash/splash_screen.dart';
+import 'package:Bezel/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Bezel Prototype',
       theme: theme(),
       // home: SplashScreen(),
       // We use routeName so that we dont need to remember the name

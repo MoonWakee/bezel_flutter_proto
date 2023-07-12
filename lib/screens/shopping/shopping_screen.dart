@@ -1,13 +1,9 @@
+import 'package:Bezel/screens/shopping/components/headerComponents/search_header.dart';
 import 'package:flutter/material.dart';
 
 import '../../size_config.dart';
-import 'components/categories.dart';
-import 'components/discount_banner.dart';
-import 'components/headerComponents/search_header.dart';
-import 'components/popular_products.dart';
-import 'components/special_offers.dart';
 
-class HomeScreen extends StatelessWidget {
+class ShoppingScreen extends StatelessWidget {
   static String routeName = "/home";
 
   @override
@@ -22,12 +18,12 @@ class HomeScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  DiscountBanner(),
-                  Categories(),
-                  SpecialOffers(),
-                  SizedBox(height: getProportionateScreenWidth(30)),
-                  PopularProducts(),
-                  SizedBox(height: getProportionateScreenWidth(30)),
+                  // DiscountBanner(),
+                  // Categories(),
+                  // SpecialOffers(),
+                  // SizedBox(height: getProportionateScreenWidth(30)),
+                  // PopularProducts(),
+                  // SizedBox(height: getProportionateScreenWidth(30)),
                 ],
               ),
             ),

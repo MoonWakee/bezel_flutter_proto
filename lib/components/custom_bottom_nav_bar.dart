@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../constants.dart';
 import '../enums.dart';
 
@@ -24,8 +22,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     final Color inActiveIconColor = Color(0xFFB6B6B6);
+
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 14),
+      height: 100,
+      padding: EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -41,47 +41,83 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         ),
       ),
       child: SafeArea(
-        top: false,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            IconButton(
-              icon: SvgPicture.asset(
-                "assets/icons/Shop Icon.svg",
-                color: _currentMenu == MenuState.home
-                    ? kPrimaryColor
-                    : inActiveIconColor,
-              ),
-              onPressed: () {
-                setState(() {
-                  _currentMenu = MenuState.home;
-                  widget.onPressed(MenuState.home);
-                });
-              },
+            buildMenuItem(
+              MenuState.home,
+              "Home",
+              Icons.home,
+              Icons.home_outlined,
+              inActiveIconColor,
             ),
-            IconButton(
-              icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-              onPressed: () {},
+            buildMenuItem(
+              MenuState.shopping,
+              "Shopping",
+              Icons.shopping_bag,
+              Icons.shopping_bag_outlined,
+              inActiveIconColor,
             ),
-            IconButton(
-              icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-              onPressed: () {},
+            buildMenuItem(
+              MenuState.consult,
+              "Consulation",
+              Icons.contact_mail,
+              Icons.contact_mail_outlined,
+              inActiveIconColor,
             ),
-            IconButton(
-              icon: SvgPicture.asset(
-                "assets/icons/User Icon.svg",
-                color: _currentMenu == MenuState.profile
-                    ? kPrimaryColor
-                    : inActiveIconColor,
-              ),
-              onPressed: () {
-                setState(() {
-                  _currentMenu = MenuState.profile;
-                  widget.onPressed(MenuState.profile);
-                });
-              },
+            buildMenuItem(
+              MenuState.profile,
+              "Profile",
+              Icons.account_circle,
+              Icons.account_circle_outlined,
+              inActiveIconColor,
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildMenuItem(
+    MenuState menuState,
+    String label,
+    IconData filledIconData,
+    IconData outlinedIconData,
+    Color inActiveIconColor,
+  ) {
+    final isSelected = _currentMenu == menuState;
+    final iconColor = isSelected ? kPrimaryColor : inActiveIconColor;
+    final labelColor = isSelected ? kPrimaryColor : inActiveIconColor;
+    final icon = isSelected ? filledIconData : outlinedIconData;
+
+    return Expanded(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            _currentMenu = menuState;
+            widget.onPressed(menuState);
+          });
+        },
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 4),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                color: iconColor,
+                size: 24,
+              ),
+              SizedBox(height: 4),
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: labelColor,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

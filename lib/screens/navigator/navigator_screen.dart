@@ -1,6 +1,7 @@
+import 'package:Bezel/screens/shopping/shopping_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/home/home_screen.dart';
-import 'package:shop_app/screens/profile/profile_screen.dart';
+import 'package:Bezel/screens/home/home_screen.dart';
+import 'package:Bezel/screens/profile/profile_screen.dart';
 
 import '../../components/custom_bottom_nav_bar.dart';
 import '../../enums.dart';
@@ -23,6 +24,9 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     switch (_selectedMenu) {
       case MenuState.home:
         body = HomeScreen();
+        break;
+      case MenuState.shopping:
+        body = ShoppingScreen();
         break;
       case MenuState.profile:
         body = ProfileScreen();
