@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/components/custom_bottom_nav_bar.dart';
-import 'package:shop_app/enums.dart';
 
-import 'components/body.dart';
+import '../../size_config.dart';
+import 'components/categories.dart';
+import 'components/discount_banner.dart';
+import 'components/home_header.dart';
+import 'components/popular_product.dart';
+import 'components/special_offers.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: getProportionateScreenHeight(20)),
+            HomeHeader(),
+            SizedBox(height: getProportionateScreenWidth(10)),
+            DiscountBanner(),
+            Categories(),
+            SpecialOffers(),
+            SizedBox(height: getProportionateScreenWidth(30)),
+            PopularProducts(),
+            SizedBox(height: getProportionateScreenWidth(30)),
+          ],
+        ),
+      ),
     );
   }
 }
