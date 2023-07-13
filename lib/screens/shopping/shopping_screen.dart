@@ -1,7 +1,12 @@
+import 'package:Bezel/screens/shopping/components/categories.dart';
 import 'package:Bezel/screens/shopping/components/headerComponents/search_header.dart';
 import 'package:flutter/material.dart';
 
 import '../../size_config.dart';
+import 'components/changable_categoreis.dart';
+import 'components/discount_banner.dart';
+import 'components/popular_products.dart';
+import 'components/todays_deal.dart';
 
 class ShoppingScreen extends StatelessWidget {
   static String routeName = "/home";
@@ -18,12 +23,32 @@ class ShoppingScreen extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  // DiscountBanner(),
-                  // Categories(),
-                  // SpecialOffers(),
-                  // SizedBox(height: getProportionateScreenWidth(30)),
-                  // PopularProducts(),
-                  // SizedBox(height: getProportionateScreenWidth(30)),
+                  DiscountBanner(adIndex: 1, totalAds: 3),
+                  ChangableCategories(),
+                  Container(
+                    height: getProportionateScreenWidth(6),
+                    width: double.infinity,
+                    color: Color.fromRGBO(206, 206, 206, 0.2),
+                  ),
+                  SizedBox(height: getProportionateScreenWidth(15)),
+                  Categories(),
+                  SizedBox(height: getProportionateScreenWidth(20)),
+                  Container(
+                    height: getProportionateScreenWidth(6),
+                    width: double.infinity,
+                    color: Color.fromRGBO(206, 206, 206, 0.2),
+                  ),
+                  SizedBox(height: getProportionateScreenWidth(15)),
+                  TodaysDeal(),
+                  SizedBox(height: getProportionateScreenWidth(20)),
+                  Container(
+                    height: getProportionateScreenWidth(6),
+                    width: double.infinity,
+                    color: Color.fromRGBO(206, 206, 206, 0.2),
+                  ),
+                  SizedBox(height: getProportionateScreenWidth(15)),
+                  PopularProducts(),
+                  SizedBox(height: getProportionateScreenWidth(30)),
                 ],
               ),
             ),

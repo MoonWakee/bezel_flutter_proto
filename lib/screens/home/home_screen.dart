@@ -5,7 +5,7 @@ import 'components/categories.dart';
 import 'components/discount_banner.dart';
 import 'components/headerComponents/search_header.dart';
 import 'components/popular_products.dart';
-import 'components/special_offers.dart';
+import 'components/Interior_posts.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
@@ -23,9 +23,14 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   DiscountBanner(),
-                  Categories(),
-                  SpecialOffers(),
-                  SizedBox(height: getProportionateScreenWidth(30)),
+                  InteriorPosts(),
+                  SizedBox(height: getProportionateScreenWidth(20)),
+                  Container(
+                    height: getProportionateScreenWidth(6),
+                    width: double.infinity,
+                    color: Color.fromRGBO(206, 206, 206, 0.2),
+                  ),
+                  SizedBox(height: getProportionateScreenWidth(15)),
                   PopularProducts(),
                   SizedBox(height: getProportionateScreenWidth(30)),
                 ],

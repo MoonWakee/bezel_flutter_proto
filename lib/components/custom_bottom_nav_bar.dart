@@ -59,6 +59,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               inActiveIconColor,
             ),
             buildMenuItem(
+              MenuState.post,
+              "",
+              Icons.add_circle,
+              Icons.add_circle_outline,
+              kPrimaryColor,
+            ),
+            buildMenuItem(
               MenuState.consult,
               "Consulation",
               Icons.contact_mail,
@@ -103,17 +110,21 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                color: iconColor,
-                size: 24,
-              ),
-              SizedBox(height: 4),
-              Text(
-                label,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: labelColor,
+              Icon(icon, color: iconColor, size: label.isNotEmpty ? 24 : 45),
+              Visibility(
+                visible: label
+                    .isNotEmpty, // Show the widgets only if the label is not empty
+                child: Column(
+                  children: [
+                    SizedBox(height: 1),
+                    Text(
+                      label,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: labelColor,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

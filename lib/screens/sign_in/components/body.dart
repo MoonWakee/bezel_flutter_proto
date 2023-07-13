@@ -18,10 +18,10 @@ class Body extends StatelessWidget {
               children: [
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Text(
-                  "Welcome!",
+                  "Welcome to Bezel!",
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: getProportionateScreenWidth(28),
+                    fontSize: getProportionateScreenWidth(24),
                     fontWeight: FontWeight.bold,
                   ),
                 ),

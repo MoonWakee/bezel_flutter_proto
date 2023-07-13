@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
-class SpecialOffers extends StatelessWidget {
-  const SpecialOffers({
+class TodaysDeal extends StatelessWidget {
+  const TodaysDeal({
     Key? key,
   }) : super(key: key);
 
@@ -16,8 +16,14 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: "Special for you",
-            press: () {},
+            title: "Today's Deal",
+            press: () {
+              var snackBar = SnackBar(
+                content: Text('Today\'s Deal Page'),
+                duration: Duration(milliseconds: 800),
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
           ),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
@@ -26,16 +32,28 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "assets/images/Image Banner 2.png",
-                category: "Smartphone",
-                numOfBrands: 18,
-                press: () {},
+                image: "assets/images/dyson.jpg",
+                category: "Dyson\'s new arrivals",
+                subtext: "Limited Sale",
+                press: () {
+                  var snackBar = SnackBar(
+                    content: Text('Dyson\'s new arrivals Page'),
+                    duration: Duration(milliseconds: 800),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
               ),
               SpecialOfferCard(
                 image: "assets/images/Image Banner 3.png",
-                category: "Fashion",
-                numOfBrands: 24,
-                press: () {},
+                category: "Summer Accessories",
+                subtext: "~40% sale",
+                press: () {
+                  var snackBar = SnackBar(
+                    content: Text('Summer Accessories Page'),
+                    duration: Duration(milliseconds: 800),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
             ],
@@ -51,12 +69,12 @@ class SpecialOfferCard extends StatelessWidget {
     Key? key,
     required this.category,
     required this.image,
-    required this.numOfBrands,
+    required this.subtext,
     required this.press,
   }) : super(key: key);
 
   final String category, image;
-  final int numOfBrands;
+  final String subtext;
   final GestureTapCallback press;
 
   @override
@@ -90,23 +108,35 @@ class SpecialOfferCard extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(15.0),
+                    horizontal: getProportionateScreenWidth(10.0),
                     vertical: getProportionateScreenWidth(10),
                   ),
-                  child: Text.rich(
-                    TextSpan(
-                      style: TextStyle(color: Colors.white),
-                      children: [
-                        TextSpan(
-                          text: "$category\n",
-                          style: TextStyle(
-                            fontSize: getProportionateScreenWidth(18),
-                            fontWeight: FontWeight.bold,
-                          ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        category,
+                        style: TextStyle(
+                          fontSize: getProportionateScreenWidth(18),
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
-                      ],
-                    ),
+                      ),
+                      SizedBox(height: 12),
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color:
+                              Color.fromARGB(255, 255, 73, 60).withOpacity(0.9),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text(
+                          subtext,
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

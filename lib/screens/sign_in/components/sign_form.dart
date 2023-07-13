@@ -1,3 +1,4 @@
+import 'package:Bezel/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:Bezel/components/custom_surfix_icon.dart';
 import 'package:Bezel/components/form_error.dart';
@@ -8,6 +9,7 @@ import 'package:Bezel/screens/login_success/login_success_screen.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
+import '../../navigator/navigator_screen.dart';
 
 class SignForm extends StatefulWidget {
   @override
@@ -77,7 +79,7 @@ class _SignFormState extends State<SignForm> {
                 _formKey.currentState!.save();
                 // if all are valid then go to success screen
                 KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                Navigator.pushNamed(context, NavigatorScreen.routeName);
               }
             },
           ),
@@ -93,7 +95,7 @@ class _SignFormState extends State<SignForm> {
       onChanged: (value) {
         if (value.isNotEmpty) {
           removeError(error: kPassNullError);
-        } else if (value.length >= 8) {
+        } else if (value.length >= 1) {
           removeError(error: kShortPassError);
         }
         return null;
@@ -102,7 +104,7 @@ class _SignFormState extends State<SignForm> {
         if (value!.isEmpty) {
           addError(error: kPassNullError);
           return "";
-        } else if (value.length < 8) {
+        } else if (value.length <= 1) {
           addError(error: kShortPassError);
           return "";
         }
@@ -134,11 +136,15 @@ class _SignFormState extends State<SignForm> {
       validator: (value) {
         if (value!.isEmpty) {
           addError(error: kEmailNullError);
-          return "";
-        } else if (!emailValidatorRegExp.hasMatch(value)) {
+          //email change here
           addError(error: kInvalidEmailError);
+
           return "";
         }
+        // } else if (!emailValidatorRegExp.hasMatch(value)) {
+        //   addError(error: kInvalidEmailError);
+        //   return "";
+        // }
         return null;
       },
       decoration: InputDecoration(

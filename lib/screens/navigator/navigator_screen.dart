@@ -1,3 +1,4 @@
+import 'package:Bezel/screens/post/post_screen.dart';
 import 'package:Bezel/screens/shopping/shopping_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:Bezel/screens/home/home_screen.dart';
@@ -31,20 +32,28 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
       case MenuState.profile:
         body = ProfileScreen();
         break;
+      case MenuState.post:
+        body = PostScreen();
+        break;
       // Add cases for other menu states as needed
       default:
         body = Container();
     }
 
-    return Scaffold(
-      body: body,
-      bottomNavigationBar: CustomBottomNavBar(
-          selectedMenu: MenuState.home,
-          onPressed: (menuState) {
-            setState(() {
-              _selectedMenu = menuState;
-            });
-          }),
-    );
+    return WillPopScope(
+        onWillPop: () async {
+          // Disable the back swipe gesture
+          return false;
+        },
+        child: Scaffold(
+          body: body,
+          bottomNavigationBar: CustomBottomNavBar(
+              selectedMenu: MenuState.home,
+              onPressed: (menuState) {
+                setState(() {
+                  _selectedMenu = menuState;
+                });
+              }),
+        ));
   }
 }

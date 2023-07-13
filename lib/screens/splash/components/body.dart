@@ -29,16 +29,19 @@ class _BodyState extends State<Body> {
 
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to Bezel! \n First Splash text",
-      "image": "assets/images/splash_1.png"
+      "text":
+          "\nInterested in Interior styling?\n\nWelcome to the inspirational community,\nwhere you can discover trending interiors!\nInspire others with your own style!",
+      "image": "assets/images/splash_post.jpeg"
     },
     {
-      "text": "Welcome to Bezel! \n Second Splash text",
-      "image": "assets/images/splash_2.png"
+      "text":
+          "\nTired of asking / looking up items?\n\nFind your insight,\nClick on the item,\nBuy in discounted price,\nit's that simple!",
+      "image": "assets/images/splash_market.jpeg"
     },
     {
-      "text": "Welcome to Bezel! \n Third Splash text",
-      "image": "assets/images/splash_3.png"
+      "text":
+          "\nInterior remodeling costs. It's discreet work.\n\nDon't pay, Consult free with us,\nRest assured with Bezel-man service\nwhere we assure our quality service with warranty!",
+      "image": "assets/images/splash_contract.jpeg"
     },
   ];
   @override
