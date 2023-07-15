@@ -1,3 +1,4 @@
+import 'package:Bezel/screens/home/components/multiple_posts.dart';
 import 'package:flutter/material.dart';
 
 import '../../size_config.dart';
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                     color: Color.fromRGBO(206, 206, 206, 0.2),
                   ),
                   SizedBox(height: getProportionateScreenWidth(15)),
-                  PopularProducts(),
+                  MultiplePosts(),
                   SizedBox(height: getProportionateScreenWidth(30)),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:Bezel/screens/consult/consult_screen.dart';
 import 'package:Bezel/screens/post/post_screen.dart';
 import 'package:Bezel/screens/shopping/shopping_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,9 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         break;
       case MenuState.post:
         body = PostScreen();
+        break;
+      case MenuState.consult:
+        body = ConsultScreen();
         break;
       // Add cases for other menu states as needed
       default:

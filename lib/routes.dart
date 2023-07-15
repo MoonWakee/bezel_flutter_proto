@@ -1,3 +1,5 @@
+import 'package:Bezel/screens/consult/consult_screen.dart';
+import 'package:Bezel/screens/post/components/product_list.dart';
 import 'package:flutter/widgets.dart';
 import 'package:Bezel/screens/cart/cart_screen.dart';
 import 'package:Bezel/screens/complete_profile/complete_profile_screen.dart';
@@ -27,5 +29,7 @@ final Map<String, WidgetBuilder> routes = {
   NavigatorScreen.routeName: (context) => NavigatorScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
   CartScreen.routeName: (context) => CartScreen(),
+  ConsultScreen.routeName: (context) => ConsultScreen(),
+  ProductList.routeName: (context) => ProductList(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
 };

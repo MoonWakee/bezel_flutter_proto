@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 class Product {
   final int id;
-  final String title, description;
+  final String title, description, subtitle;
   final List<String> images;
   final List<Color> colors;
   final double rating, price;
   final bool isFavourite, isPopular;
 
-  Product({
-    required this.id,
-    required this.images,
-    required this.colors,
-    this.rating = 0.0,
-    this.isFavourite = false,
-    this.isPopular = false,
-    required this.title,
-    required this.price,
-    required this.description,
-  });
+  Product(
+      {required this.id,
+      required this.images,
+      required this.colors,
+      this.rating = 0.0,
+      this.isFavourite = false,
+      this.isPopular = false,
+      required this.title,
+      required this.price,
+      required this.description,
+      required this.subtitle});
 }
 
 // Our demo Products
@@ -39,6 +39,7 @@ List<Product> demoProducts = [
     description:
         "Simple Designs creates affordable decorative lighting designs for your home. From table and floor lamps to desk lamps, ceiling lights and everything in between, Simple Designs knows the value of practical lighting solutions, and our mission is to provide a wide selection of lighting designs you'll love.",
     rating: 4.8,
+    subtitle: "Simple Design Lamp",
     isFavourite: true,
     isPopular: true,
   ),
@@ -57,6 +58,7 @@ List<Product> demoProducts = [
     description:
         "The super soft velvet cushion cover can not only protect your beloved pillow cushion, but also can be used with other pillows and furniture to make your home more different.",
     rating: 4.1,
+    subtitle: "Emvency Black Pillow",
     isPopular: true,
   ),
   Product(
@@ -72,6 +74,7 @@ List<Product> demoProducts = [
     description:
         "CaliTime has always been committed to developing and providing unique design and high-quality THROW PILLOW COVERS for you, bringing colorful warmth to your life and refreshing your living space!",
     rating: 4.6,
+    subtitle: "Calitime Yellow Pillow",
     isPopular: true,
   ),
   Product(
@@ -89,11 +92,12 @@ List<Product> demoProducts = [
     description:
         "Made from a metal structure with a marble table top, it is both stylish and elegant. No assembly required, it can be used directly.",
     rating: 4.8,
+    subtitle: "Nordic Marble Table",
     isFavourite: true,
     isPopular: true,
   ),
   Product(
-    id: 4,
+    id: 5,
     images: [
       "assets/images/wireless headset.png",
     ],
@@ -107,6 +111,7 @@ List<Product> demoProducts = [
     price: 20.20,
     description: description,
     rating: 4.1,
+    subtitle: "wired headset",
     isFavourite: true,
   ),
 ];

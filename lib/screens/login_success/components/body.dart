@@ -13,20 +13,20 @@ class Body extends StatelessWidget {
           "assets/images/success.png",
           height: SizeConfig.screenHeight * 0.4, //40%
         ),
-        SizedBox(height: SizeConfig.screenHeight * 0.08),
         Text(
-          "Welcome to Bezel!",
+          "You are all set!\n\nWe will contact you\nthrough contact info!",
           style: TextStyle(
-            fontSize: getProportionateScreenWidth(30),
+            fontSize: getProportionateScreenWidth(26),
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
+          textAlign: TextAlign.center,
         ),
         Spacer(),
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
-            text: "Get Started!",
+            text: "Back to Home",
             press: () {
               Navigator.pushNamed(context, NavigatorScreen.routeName);
             },
