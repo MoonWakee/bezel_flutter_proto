@@ -18,6 +18,7 @@ class InteriorPosts extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
+            noMore: false,
             title: "Trending Interior Posts",
             press: () {
               var snackBar = SnackBar(

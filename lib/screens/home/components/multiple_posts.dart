@@ -20,6 +20,7 @@ class MultiplePosts extends StatelessWidget {
             horizontal: getProportionateScreenWidth(20),
           ),
           child: SectionTitle(
+            noMore: false,
             title: "Today's Categories",
             press: () {
               var snackBar = SnackBar(
@@ -205,7 +206,7 @@ class SpecialOfferCard extends StatelessWidget {
           height: getProportionateScreenWidth(100),
           child: ClipRRect(
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                topLeft: Radius.circular(5), topRight: Radius.circular(5)),
             child: Stack(
               children: [
                 Image.asset(
@@ -228,9 +229,8 @@ class SpecialOfferCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 1),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 8),
+          padding: EdgeInsets.symmetric(vertical: 15),
           child: Text(
             category,
             style: TextStyle(
@@ -239,7 +239,7 @@ class SpecialOfferCard extends StatelessWidget {
               color: kPrimaryColor,
             ),
           ),
-        ),
+        )
       ],
     );
   }

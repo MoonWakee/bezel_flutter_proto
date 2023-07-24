@@ -7,10 +7,12 @@ class SectionTitle extends StatelessWidget {
     Key? key,
     required this.title,
     required this.press,
+    required this.noMore,
   }) : super(key: key);
 
   final String title;
   final GestureTapCallback press;
+  final bool noMore;
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +22,18 @@ class SectionTitle extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-            fontSize: getProportionateScreenWidth(18),
-            color: Colors.black,
-          ),
+              fontSize: getProportionateScreenWidth(20),
+              fontWeight: FontWeight.bold),
         ),
-        GestureDetector(
-          onTap: press,
-          child: Text(
-            "See More",
-            style: TextStyle(color: Color(0xFFBBBBBB)),
-          ),
-        ),
+        Visibility(
+            visible: !noMore,
+            child: (GestureDetector(
+              onTap: press,
+              child: Text(
+                "See More",
+                style: TextStyle(color: Color(0xFFBBBBBB)),
+              ),
+            )))
       ],
     );
   }

@@ -1,4 +1,4 @@
-import 'package:Bezel/screens/consult/components/contact_page.dart';
+import 'package:Bezel/screens/consult/components/contract_card.dart';
 import 'package:Bezel/screens/login_success/login_success_screen.dart';
 import 'package:flutter/material.dart';
 
